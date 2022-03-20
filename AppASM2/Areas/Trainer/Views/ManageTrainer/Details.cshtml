@@ -1,0 +1,46 @@
+﻿@model IEnumerable<AppASM2.Models.Class>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="p-3 mb-2 bg-info text-dark"><center><h2>Index Trainee</h2></center></div>
+<table class="table">
+    <tr class="bg-success">
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.Category.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDay)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.Category.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDay)
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    <button type="button" class="btn btn-secondary">
+        @Html.ActionLink("Back to List", "Index")
+    </button>
+</p>

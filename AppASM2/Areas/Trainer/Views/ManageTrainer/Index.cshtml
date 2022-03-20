@@ -1,0 +1,75 @@
+﻿@model IEnumerable<AppASM2.Models.Class>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="p-3 mb-2 bg-info text-dark"><center><h2>Index Trainer</h2></center></div>
+
+<div class="container">
+    <div class="row mt-5">
+        @if (Model.Count() == 0)
+        {
+            <div class="col-6 col-md-5 col-lg-3 mb-2 card-effect">
+                <div class="card bg-danger border-success text-light">
+                    <div class="card-header bg-success border-success text-center">
+                        <p class="card-subtitle mt-1"><small>- 1670 -</small></p>
+                    </div>
+
+                    <div class="card-body text-success">
+                        <center>
+                            <p class="card-text">
+                                No Information in your Account
+                            </p>
+                            <p class="card-text">
+                            </p>
+                        </center>
+                    </div>
+
+                    <div class="card-footer bg-success  border-1 text-center">
+                        <small class="text-muted">
+                        </small>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+
+                <div class="col-6 col-md-5 col-lg-3 mb-2 card-effect">
+                    <a class="text-decoration-none" href="/Trainer/ManageTrainer/Details">
+                        <div class="card bg-danger border-success text-light">
+                            <div class="card-header bg-success border-success text-center">
+
+                                @item.Course.Code
+
+                                <p class="card-subtitle mt-1"><small>- 1670 -</small></p>
+                            </div>
+
+                            <div class="card-body text-success">
+                                <center>
+                                    <p class="card-text">
+                                        @Html.DisplayNameFor(model => model.Code)
+                                        @item.Code
+                                    </p>
+                                    <p class="card-text">
+                                        @Html.DisplayNameFor(model => model.StartDay)
+                                        @item.StartDay
+                                    </p>
+                                </center>
+                            </div>
+                            <div class="card-footer bg-success  border-1 text-center">
+                                <small class="text-muted">
+                                    @item.Course.Category.Name
+                                </small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+    </div>
+</div>
+

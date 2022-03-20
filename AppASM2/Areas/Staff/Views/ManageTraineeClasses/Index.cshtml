@@ -1,0 +1,56 @@
+﻿@model IEnumerable<AppASM2.Models.TraineeClass>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="p-3 mb-2 bg-info text-dark"><center><h2>Index TraineeClass</h2></center></div>
+
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group" role="group" aria-label="Third group">
+        <button type="button" class="btn btn-success">
+            @Html.ActionLink("Create New", "Create")
+        </button>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Trainee.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Class.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Class.Course.Category.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Class.Course.Code)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trainee.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class.Course.Category.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class.Course.Code)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TraineeClassId }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TraineeClassId }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TraineeClassId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

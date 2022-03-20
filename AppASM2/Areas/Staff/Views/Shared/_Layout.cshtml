@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="text-center">
+        <img src="https://greenwich.edu.vn/images/config/logo_1454075749.png" class="rounded" alt="...">
+    </div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Greenwich", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                   <li>@Html.ActionLink("ManageCategories", "Index", "ManageCategories")</li>
+                    @*<li>@Html.ActionLink("ManageClasses", "Index", "ManageClasses")</li>*@
+                    <li>@Html.ActionLink("ManageIdea", "Index", "ManageCourses")</li>
+                    @*<li>@Html.ActionLink("ManageTopic", "Index", "ManageTopics")</li>
+                    <li>@Html.ActionLink("ManageTrianeeClass", "Index", "ManageTraineeClasses")</li>
+                    <li>@Html.ActionLink("ManageTrainer", "Index", "ManageTrainers")</li>
+                    <li>@Html.ActionLink("ManageTrainee", "Index", "ManageTrainee")</li>*@
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <div class="p-3 mb-2 bg-info text-white">
+            <div class="container">
+                <center><h3 class="widget-title font-alt">Greenwich University Admissions Office</h3></center>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="widget">
+                            <h4>HA NOI.</h4>
+                            <p> DETECH Building -Number 8 Ton That Thuyet-My Dinh Ward 2-District Nam Tu Liem</p>
+                            <p>Phone: 024.7300.2266</p>
+                            <p>Hotline: 0981.558.080 | 0971,274,545</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="widget">
+                            <h4>TP. HO CHI MINH.</h4>
+                            <p> CS1: No. 142-146 Pham Phu Thu - Ward 4 - District 6 (End of Street 3/2)</p>
+                            <p> CS2: 205 Nguyen Xi, Ward 26, Binh Thanh.</p>
+                            <p>Phone: 028.7300.6622</p>
+                            <p>Hotline: 0933.108.554 | 0971,294,545</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="widget">
+                            <h4>DA NANG.</h4>
+                            <p>658 Ngo Quyen, Son Tra district, Da Nang city</p>
+                            <p>Phone: 0236.730.2266</p>
+                            <p>Hotline: 0934.892.687</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="widget">
+                            <h4>CAN THO.</h4>
+                            <p>No. 160, 30/4 Street, An Phu Ward, Ninh Kieu District - City. Can Tho</p>
+                            <p>Phone: 0292.730.0068</p>
+                            <p>Hotline: 0968.670.804 | 0936,600,861</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="divider-d">
+        <footer class="footer bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="copyright font-alt">&copy; 2020&nbsp;<a>Hồ Anh Dũng</a>, Greenwich University</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="container" style="text-align: center; padding: 10px;">
+                            <a href="https://facebook.com/GreenwichVietnam" class="item-social"><img src="https://greenwich.edu.vn/templates/default/images/facebook.png" alt=""></a>
+                            <a href="https://www.youtube.com/channel/UCO60geidjQPqSc6TH35YUEw" class="item-social"><img src="https://greenwich.edu.vn/templates/default/images/youtube.png" alt=""></a>
+                            <a href="" class="item-social"><img src="https://greenwich.edu.vn/templates/default/images/google.png" alt=""></a>
+                            <a href="https://www.instagram.com/uogvn/" class="item-social"><img src="https://greenwich.edu.vn/templates/default/images/instagram.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

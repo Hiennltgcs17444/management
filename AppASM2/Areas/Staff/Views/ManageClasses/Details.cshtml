@@ -1,0 +1,43 @@
+﻿@model AppASM2.Models.Class
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="p-3 mb-2 bg-info text-dark"><center><h2>Details Class</h2></center></div>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDay)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button type="button" class="btn btn-secondary">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ClassId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </button>
+</p>

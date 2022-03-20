@@ -1,0 +1,47 @@
+﻿@model AppASM2.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="p-3 mb-2 bg-info text-dark"><center><h2>Delete Trainee</h2></center></div>
+
+<h3>Are you sure you want to delete Trainee?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-secondary" /> |
+            <button type="button" class="btn btn-secondary">
+                @Html.ActionLink("Back to List", "Index")
+            </button>
+        </div>
+    }
+</div>

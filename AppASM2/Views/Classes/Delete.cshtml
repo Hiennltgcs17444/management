@@ -1,0 +1,47 @@
+﻿@model AppASM2.Models.Class
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="p-3 mb-2 bg-info text-dark"><center><h2>Delete Class</h2></center></div>
+
+<h3>Are you sure you want to delete Class?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDay)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
